@@ -1,0 +1,6 @@
+[submodule "Walnut/vendor/spdlog"]
+	path = Walnut/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "Walnut/vendor/GlFW"]
+	path = Walnut/vendor/GlFW
+	url = https://github.com/TheCherno/glfw
