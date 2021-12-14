@@ -1,36 +1,63 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Plateform">
+      <UniqueIdentifier>{CF988A45-3B03-3FBC-8441-F061F0EA1C11}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Plateform\Windows">
+      <UniqueIdentifier>{09A24FC9-75B8-4D5F-BE2F-D9802A851EE7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Walnut">
+      <UniqueIdentifier>{C038E8D9-ACDA-12B0-9595-260481D69900}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Walnut\Events">
+      <UniqueIdentifier>{A48C4E08-104D-CA3E-D987-13BC45070F1B}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Walnut\Core.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Plateform\Windows\WindowsWindow.h">
+      <Filter>Plateform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="src\Walnut.h" />
     <ClInclude Include="src\Walnut\Application.h">
-      <Filter>Header Files</Filter>
+      <Filter>Walnut</Filter>
     </ClInclude>
-    <ClInclude Include="src\Walnut.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Walnut\Core.h">
+      <Filter>Walnut</Filter>
     </ClInclude>
     <ClInclude Include="src\Walnut\EntryPoint.h">
-      <Filter>Header Files</Filter>
+      <Filter>Walnut</Filter>
     </ClInclude>
+    <ClInclude Include="src\Walnut\Events\ApplicationEvent.h">
+      <Filter>Walnut\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Walnut\Events\Event.h">
+      <Filter>Walnut\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Walnut\Events\KeyEvent.h">
+      <Filter>Walnut\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Walnut\Events\MouseEvent.h">
+      <Filter>Walnut\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Walnut\Log.h">
+      <Filter>Walnut</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Walnut\Window.h">
+      <Filter>Walnut</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wnpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Walnut\Application.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Plateform\Windows\WindowsWindow.cpp">
+      <Filter>Plateform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\Walnut\Application.cpp">
+      <Filter>Walnut</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Walnut\Log.cpp">
+      <Filter>Walnut</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wnpch.cpp" />
   </ItemGroup>
 </Project>
