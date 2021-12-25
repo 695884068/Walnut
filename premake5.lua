@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to toor folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Walnut/vendor/GlFW/include"
+IncludeDir["Glad"] = "Walnut/vendor/Glad/include"
 
 include "Walnut/vendor/GlFW"
+include "Walnut/vendor/Glad"
 
 project "Walnut"
 	location "Walnut"
@@ -37,12 +39,14 @@ project "Walnut"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include;",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -54,7 +58,8 @@ project "Walnut"
 		defines
 		{
 			"WN_PLATFORM_WINDOWS",
-			"WN_BUILD_DLL"
+			"WN_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -64,14 +69,17 @@ project "Walnut"
 
 		filter "configurations:Debug"
 			defines "WN_DEBUG"
+			buildoptions "/MDd"
 			symbols "On"
 
 		filter "configurations:Release"
 			defines "WN_RELEASE"
+			buildoptions "/MD"
 			optimize "On"
 
 		filter "configurations:Dist"
 			defines "WN_DIST"
+			buildoptions "/MD"
 			optimize "On"
 
 project "Sandbox"
@@ -111,12 +119,15 @@ project "Sandbox"
 
 		filter "configurations:Debug"
 			defines "WN_DEBUG"
+			buildoptions "/MDd"
 			symbols "On"
 
 		filter "configurations:Release"
 			defines "WN_RELEASE"
+			buildoptions "/MD"
 			optimize "On"
 
 		filter "configurations:Dist"
 			defines "WN_DIST"
+			buildoptions "/MD"
 			optimize "On"

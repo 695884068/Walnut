@@ -30,7 +30,7 @@ namespace Walnut {
 
 //Clinet log macros
 #define WN_TRACE(...)	::Walnut::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define WN_INFO(...)	::Walnut::Log::GetClientLogger()->info(__VA_ARGS__)
-#define WN_WARN(...)	::Walnut::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define WN_INFO(...)		::Walnut::Log::GetClientLogger()->info(__VA_ARGS__)
+#define WN_WARN(...)		::Walnut::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define WN_ERROR(...)	::Walnut::Log::GetClientLogger()->error(__VA_ARGS__)
 #define WN_FATAL(...)	::Walnut::Log::GetClientLogger()->fatal(__VA_ARGS__)
