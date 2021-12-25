@@ -2,7 +2,6 @@
 
 #include "Walnut/Events/Event.h"
 
-
 namespace Walnut {
 
 	class WALNUT_API WindowResizeEvent : public Event
@@ -28,7 +27,7 @@ namespace Walnut {
 
 	};
 
-	class WALNUT_API WindowCloseEvent : Event
+	class WALNUT_API WindowCloseEvent : public Event
 	{
 	public:
 		WindowCloseEvent() {}
@@ -37,7 +36,7 @@ namespace Walnut {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class WALNUT_API AppTickEvent : Event
+	class WALNUT_API AppTickEvent : public Event
 	{
 	public:
 		AppTickEvent() {}
@@ -46,7 +45,7 @@ namespace Walnut {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class WALNUT_API AppUpdateEvent : Event
+	class WALNUT_API AppUpdateEvent : public Event
 	{
 	public:
 		AppUpdateEvent() {}
@@ -55,7 +54,7 @@ namespace Walnut {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class WALNUT_API AppRenderEvent : Event
+	class WALNUT_API AppRenderEvent : public Event
 	{
 	public:
 		AppRenderEvent() {}
