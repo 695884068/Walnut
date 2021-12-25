@@ -14,7 +14,7 @@ namespace Walnut {
 		void OnUpdate() override;
 
 		inline unsigned int GetWidth() const override { return m_Data.Width; }
-		inline unsigned int GetHeigth() const override { return m_Data.Heigth; }
+		inline unsigned int GetHeight() const override { return m_Data.Heigth; }
 
 		//Window attributes
 		inline void SetEventCallback(const EventCallbackFn& callback) override { m_Data.EventCallback = callback; }

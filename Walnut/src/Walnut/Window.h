@@ -33,7 +33,7 @@ namespace Walnut
 		virtual void OnUpdate() = 0;
 
 		virtual unsigned int GetWidth() const = 0;
-		virtual unsigned int GetHeigth() const = 0;
+		virtual unsigned int GetHeight() const = 0;
 
 
 		//Windows attributes

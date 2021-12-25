@@ -13,12 +13,6 @@
     <Filter Include="Walnut\Events">
       <UniqueIdentifier>{A48C4E08-104D-CA3E-D987-13BC45070F1B}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Walnut\ImGui">
-      <UniqueIdentifier>{8b280d95-7a20-4f8e-8ee5-6c4a252d7fad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Plateform\OpenGL">
-      <UniqueIdentifier>{54ac80a0-b64b-479d-9dd7-a8d2bd35d5c0}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Plateform\Windows\WindowsWindow.h">
@@ -59,12 +53,8 @@
       <Filter>Walnut</Filter>
     </ClInclude>
     <ClInclude Include="src\wnpch.h" />
-    <ClInclude Include="ImGuiLayer.h">
-      <Filter>Walnut\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGuiOpenGLRenderer.h">
-      <Filter>Plateform\OpenGL</Filter>
-    </ClInclude>
+    <ClInclude Include="src\Plateform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Walnut\ImGui\ImGuiLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Plateform\Windows\WindowsWindow.cpp">
@@ -83,11 +73,7 @@
       <Filter>Walnut</Filter>
     </ClCompile>
     <ClCompile Include="src\wnpch.cpp" />
-    <ClCompile Include="ImGuiLayer.cpp">
-      <Filter>Walnut\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="ImGuiOpenGLRenderer.cpp">
-      <Filter>Plateform\OpenGL</Filter>
-    </ClCompile>
+    <ClCompile Include="src\Plateform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Walnut\ImGui\ImGuiLayer.cpp" />
   </ItemGroup>
 </Project>
