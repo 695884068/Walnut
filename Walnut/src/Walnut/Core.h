@@ -10,8 +10,8 @@
 	#error Walnut only supports Windows!
 #endif // WN_PLATFORM_WINDOWS
 
-#ifdef HZ_DEBUG
-	#define HZ_ENABLE_ASSERTS
+#ifdef WN_DEBUG
+	#define WN_ENABLE_ASSERTS
 #endif
 
 #ifdef WN_ENABLE_ASSERTS
