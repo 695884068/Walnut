@@ -65,6 +65,18 @@
       <Filter>Walnut</Filter>
     </ClInclude>
     <ClInclude Include="src\wnpch.h" />
+    <ClInclude Include="Input.h">
+      <Filter>Walnut</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsInput.h">
+      <Filter>Plateform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyCode.h">
+      <Filter>Walnut</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseButtonCodes.h">
+      <Filter>Walnut</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Plateform\OpenGL\ImGuiOpenGLRenderer.cpp">
@@ -89,5 +101,8 @@
       <Filter>Walnut</Filter>
     </ClCompile>
     <ClCompile Include="src\wnpch.cpp" />
+    <ClCompile Include="WindowsInput.cpp">
+      <Filter>Plateform\Windows</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

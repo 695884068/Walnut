@@ -16,7 +16,7 @@
 
 #ifdef WN_ENABLE_ASSERTS
 	#define WN_ASSERTS(x, ...) { if(!(x)) { WN_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); }}
-	#define WN_CORE_ASSERT(x, ...) { if(!(x)) { WN_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS); __debugbreak(); }}
+	#define WN_CORE_ASSERT(x, ...) { if(!(x)) { WN_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); }}
 #else
 	#define WN_ASSERTS(x, ...)
 	#define WN_CORE_ASSERT(x, ...)

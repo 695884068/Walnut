@@ -1,5 +1,6 @@
 #include <Walnut.h>
 
+#include "Walnut/Input.h"
 
 class ExampleLayer : public Walnut::Layer
 {
@@ -11,12 +12,19 @@ public:
 
 	void OnUpdate() override
 	{
-		WN_INFO("ExampleLayer::Update");
+		if (Walnut::Input::IsKeyPressed(WN_KEY_TAB))
+			WN_TRACE("Tab key is pressed (poll)!");
 	}
 
 	void OnEvent(Walnut::Event& event) override
 	{
-		WN_TRACE("{0}", event);
+		if (event.GetEventType() == Walnut::EventType::KeyPressed)
+		{
+			Walnut::KeyPressedEvent& e = (Walnut::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == WN_KEY_TAB)
+				WN_TRACE("Tab key is pressed (event)!");
+			WN_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 };
 
