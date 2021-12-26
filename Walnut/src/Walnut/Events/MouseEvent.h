@@ -5,10 +5,10 @@
 
 namespace Walnut {
 
-	class WALNUT_API MouseMoveEvent : public Event
+	class WALNUT_API MouseMovedEvent : public Event
 	{
 	public:
-		MouseMoveEvent(float x, float y)
+		MouseMovedEvent(float x, float y)
 			: m_MouseX(x), m_MouseY(y) {}
 
 		inline float GetX() const { return m_MouseX; }
@@ -17,7 +17,7 @@ namespace Walnut {
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "MouseMoveEvent: " << m_MouseX << ", " << m_MouseY;
+			ss << "MouseMovedEvent: " << m_MouseX << ", " << m_MouseY;
 			return ss.str();
 		}
 
@@ -52,7 +52,7 @@ namespace Walnut {
 	class WALNUT_API MouseButtonEvent : public Event
 	{
 	public:
-		inline float GetMouseButton() const { return m_Button; }
+		inline int GetMouseButton() const { return m_Button; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	protected:

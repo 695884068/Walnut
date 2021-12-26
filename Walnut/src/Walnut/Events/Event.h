@@ -12,7 +12,7 @@ namespace Walnut {
 		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
@@ -35,7 +35,7 @@ namespace Walnut {
 
 	class WALNUT_API Event
 	{
-		friend class EventDispatcher;
+		//friend class EventDispatcher;
 	public:
 		bool Handled = false;
 

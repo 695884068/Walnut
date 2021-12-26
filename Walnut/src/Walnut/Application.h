@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Core.h"
-#include "Events/Event.h"
+#include "Walnut/Events/Event.h"
 #include "Window.h"
 #include "Walnut/LayerStack.h"
 #include "Walnut/Events/ApplicationEvent.h"

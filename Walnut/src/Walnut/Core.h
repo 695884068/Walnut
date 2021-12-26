@@ -10,6 +10,10 @@
 	#error Walnut only supports Windows!
 #endif // WN_PLATFORM_WINDOWS
 
+#ifdef HZ_DEBUG
+	#define HZ_ENABLE_ASSERTS
+#endif
+
 #ifdef WN_ENABLE_ASSERTS
 	#define WN_ASSERTS(x, ...) { if(!(x)) { WN_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); }}
 	#define WN_CORE_ASSERT(x, ...) { if(!(x)) { WN_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS); __debugbreak(); }}
@@ -19,3 +23,5 @@
 #endif
 
 #define BIT(x) (1 << x)
+
+#define WN_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
