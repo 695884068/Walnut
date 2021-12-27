@@ -110,6 +110,7 @@ project "Sandbox"
 	{
 		"Walnut/vendor/spdlog/include;",
 		"Walnut/src",
+		"Walnut/vendor",
 		"%{IncludeDir.glm}"
 	}
 

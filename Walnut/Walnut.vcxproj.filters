@@ -45,8 +45,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Plateform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>src\Plateform\OpenGL</Filter>
+    <ClInclude Include="src\Plateform\Windows\WindowsInput.h">
+      <Filter>src\Plateform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Plateform\Windows\WindowsWindow.h">
       <Filter>src\Plateform\Windows</Filter>
@@ -1347,17 +1347,19 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\Plateform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Plateform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>src\Plateform\OpenGL</Filter>
+    <ClCompile Include="src\Plateform\Windows\WindowsInput.cpp">
+      <Filter>src\Plateform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Plateform\Windows\WindowsWindow.cpp">
       <Filter>src\Plateform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Walnut\Application.cpp">
       <Filter>src\Walnut</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Walnut\ImGui\ImGuiBuild.cpp">
+      <Filter>src\Walnut\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Walnut\ImGui\ImGuiLayer.cpp">
       <Filter>src\Walnut\ImGui</Filter>
@@ -1374,6 +1376,5 @@
     <ClCompile Include="src\wnpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Plateform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

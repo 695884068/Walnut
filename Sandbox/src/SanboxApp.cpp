@@ -1,6 +1,6 @@
 #include <Walnut.h>
 
-//#include "Walnut/Input.h"
+#include "imgui/imgui.h"
 
 class ExampleLayer : public Walnut::Layer
 {
@@ -14,6 +14,13 @@ public:
 	{
 		if (Walnut::Input::IsKeyPressed(WN_KEY_TAB))
 			WN_TRACE("Tab key is pressed (poll)!");
+	}
+
+	virtual void OnImGuiRender() override
+	{
+		//ImGui::Begin("Test");
+		//ImGui::Text("Hello World");
+		//ImGui::End();
 	}
 
 	void OnEvent(Walnut::Event& event) override
@@ -34,7 +41,6 @@ public:
 	Sanbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Walnut::ImGuiLayer());
 	}
 
 	~Sanbox()
