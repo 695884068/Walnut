@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>wnpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WN_PLATFORM_WINDOWS;WN_BUILD_DLL;GLFW_INCLUDE_NONE;WN_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;;vendor\GlFW\include;vendor\Glad\include;vendor\imgui;..\Hazel\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;;vendor\GlFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -93,7 +93,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\Walnut\Walnut.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Walnut\Walnut.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Walnut\Walnut.dll "..\bin\Debug-windows-x86_64\Sandbox" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Walnut\Walnut.dll "..\bin\Debug-windows-x86_64\Sandbox" &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Walnut\Walnut.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Walnut\Walnut.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Walnut\Walnut.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -102,7 +102,7 @@
       <PrecompiledHeaderFile>wnpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WN_PLATFORM_WINDOWS;WN_BUILD_DLL;GLFW_INCLUDE_NONE;WN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;;vendor\GlFW\include;vendor\Glad\include;vendor\imgui;..\Hazel\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;;vendor\GlFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -119,7 +119,7 @@
       <ImportLibrary>..\bin\Release-windows-x86_64\Walnut\Walnut.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\Walnut\Walnut.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Walnut\Walnut.dll "..\bin\Release-windows-x86_64\Sandbox" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Walnut\Walnut.dll "..\bin\Release-windows-x86_64\Sandbox" &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\Walnut\Walnut.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Walnut\Walnut.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Walnut\Walnut.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -128,7 +128,7 @@
       <PrecompiledHeaderFile>wnpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WN_PLATFORM_WINDOWS;WN_BUILD_DLL;GLFW_INCLUDE_NONE;WN_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;;vendor\GlFW\include;vendor\Glad\include;vendor\imgui;..\Hazel\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;;vendor\GlFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -145,11 +145,12 @@
       <ImportLibrary>..\bin\Dist-windows-x86_64\Walnut\Walnut.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Walnut\Walnut.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Walnut\Walnut.dll "..\bin\Dist-windows-x86_64\Sandbox" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Walnut\Walnut.dll "..\bin\Dist-windows-x86_64\Sandbox" &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Walnut\Walnut.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Walnut\Walnut.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Walnut\Walnut.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Plateform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Plateform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Plateform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Walnut.h" />
     <ClInclude Include="src\Walnut\Application.h" />
@@ -586,6 +587,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Plateform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Plateform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Plateform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Walnut\Application.cpp" />
     <ClCompile Include="src\Walnut\ImGui\ImGuiLayer.cpp" />

@@ -16,7 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Walnut/vendor/GlFW/include"
 IncludeDir["Glad"] = "Walnut/vendor/Glad/include"
 IncludeDir["ImGui"] = "Walnut/vendor/imgui"
-IncludeDir["glm"] = "Hazel/vendor/glm"
+IncludeDir["glm"] = "Walnut/vendor/glm"
 
 include "Walnut/vendor/GLFW"
 include "Walnut/vendor/Glad"
@@ -73,7 +73,7 @@ project "Walnut"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox\"")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 		filter "configurations:Debug"
