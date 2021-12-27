@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Walnut/vendor/GlFW/include"
 IncludeDir["Glad"] = "Walnut/vendor/Glad/include"
 IncludeDir["ImGui"] = "Walnut/vendor/imgui"
+IncludeDir["glm"] = "Hazel/vendor/glm"
 
 include "Walnut/vendor/GLFW"
 include "Walnut/vendor/Glad"
@@ -36,7 +37,9 @@ project "Walnut"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
 	}
 	
 	includedirs
@@ -45,7 +48,8 @@ project "Walnut"
 		"%{prj.name}/vendor/spdlog/include;",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -105,7 +109,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Walnut/vendor/spdlog/include;",
-		"Walnut/src"
+		"Walnut/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links
