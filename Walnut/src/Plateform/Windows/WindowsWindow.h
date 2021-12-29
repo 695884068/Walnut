@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Walnut/Window.h"
+#include "Walnut/Renderer/GraphicsContext.h"
+
 #include "GLFW/glfw3.h"
 
 namespace Walnut {
@@ -27,6 +29,7 @@ namespace Walnut {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{

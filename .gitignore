@@ -14,6 +14,7 @@ bin-int/
 *.lo
 *.o
 *.obj
+*.ini
 
 # Precompiled Headers
 *.gch
