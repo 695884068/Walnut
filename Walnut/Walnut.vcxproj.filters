@@ -1344,6 +1344,8 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\Walnut\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Plateform\OpenGL\OpenGLContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Plateform\Windows\WindowsInput.cpp">
@@ -1373,5 +1375,6 @@
     <ClCompile Include="src\wnpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Plateform\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
 </Project>

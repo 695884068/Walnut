@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Plateform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Plateform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Plateform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Walnut.h" />
@@ -157,6 +158,7 @@
     <ClInclude Include="src\Walnut\LayerStack.h" />
     <ClInclude Include="src\Walnut\Log.h" />
     <ClInclude Include="src\Walnut\MouseButtonCodes.h" />
+    <ClInclude Include="src\Walnut\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Walnut\Window.h" />
     <ClInclude Include="src\wnpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -576,6 +578,7 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Plateform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Plateform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Plateform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Walnut\Application.cpp" />
