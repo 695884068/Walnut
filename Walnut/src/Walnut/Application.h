@@ -8,6 +8,7 @@
 #include "Walnut/ImGui/ImGuiLayer.h"
 
 #include "Walnut/Renderer/Shader.h"
+#include "Walnut/Renderer/Buffer.h"
 
 namespace Walnut {
 
@@ -35,8 +36,10 @@ namespace Walnut {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-		unsigned int m_VertexBuffer, m_VertexArray, m_IndexBuffer;
+		unsigned int m_VertexArray;
 		std::unique_ptr<Shader> m_Shader;
+		std::unique_ptr<VertexBuffer> m_VertexBuffer;
+		std::unique_ptr<IndexBuffer> m_IndexBuffer;
 	private:
 		static Application* s_Instance;
 	};
