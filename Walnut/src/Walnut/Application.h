@@ -7,6 +7,8 @@
 #include "Walnut/Events/ApplicationEvent.h"
 #include "Walnut/ImGui/ImGuiLayer.h"
 
+#include "Walnut/Renderer/Shader.h"
+
 namespace Walnut {
 
 	class WALNUT_API Application
@@ -34,6 +36,7 @@ namespace Walnut {
 		LayerStack m_LayerStack;
 
 		unsigned int m_VertexBuffer, m_VertexArray, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	private:
 		static Application* s_Instance;
 	};

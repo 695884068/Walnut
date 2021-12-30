@@ -159,6 +159,7 @@
     <ClInclude Include="src\Walnut\Log.h" />
     <ClInclude Include="src\Walnut\MouseButtonCodes.h" />
     <ClInclude Include="src\Walnut\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Walnut\Renderer\Shader.h" />
     <ClInclude Include="src\Walnut\Window.h" />
     <ClInclude Include="src\wnpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -587,6 +588,7 @@
     <ClCompile Include="src\Walnut\Layer.cpp" />
     <ClCompile Include="src\Walnut\LayerStack.cpp" />
     <ClCompile Include="src\Walnut\Log.cpp" />
+    <ClCompile Include="src\Walnut\Renderer\Shader.cpp" />
     <ClCompile Include="src\wnpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
