@@ -1350,6 +1350,8 @@
     <ClInclude Include="src\Walnut\Renderer\Buffer.h" />
     <ClInclude Include="src\Plateform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Walnut\Renderer\Renderer.h" />
+    <ClInclude Include="src\Walnut\Renderer\VertexArray.h" />
+    <ClInclude Include="src\Plateform\OpenGL\OpenGLVertexArray.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Plateform\Windows\WindowsInput.cpp">
@@ -1384,5 +1386,7 @@
     <ClCompile Include="src\Walnut\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Plateform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Walnut\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Walnut\Renderer\VertexArray.cpp" />
+    <ClCompile Include="src\Plateform\OpenGL\OpenGLVertexArray.cpp" />
   </ItemGroup>
 </Project>
