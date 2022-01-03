@@ -5,7 +5,6 @@
 
 #include "Renderer/Renderer.h"
 
-//#include <glad/glad.h>
 
 #include "Input.h"
 
