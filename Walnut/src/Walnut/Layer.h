@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Walnut/Core.h"
+#include "Walnut/Core/Timestep.h"
 #include "Walnut/Events/Event.h"
 
 namespace Walnut {
@@ -14,7 +15,7 @@ namespace Walnut {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

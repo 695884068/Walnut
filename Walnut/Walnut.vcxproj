@@ -149,6 +149,7 @@
     <ClInclude Include="src\Walnut.h" />
     <ClInclude Include="src\Walnut\Application.h" />
     <ClInclude Include="src\Walnut\Core.h" />
+    <ClInclude Include="src\Walnut\Core\Timestep.h" />
     <ClInclude Include="src\Walnut\EntryPoint.h" />
     <ClInclude Include="src\Walnut\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Walnut\Events\Event.h" />

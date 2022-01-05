@@ -118,21 +118,21 @@ public:
 		m_BlueShader.reset(new Walnut::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
 	}
 
-	void OnUpdate() override
+	void OnUpdate(Walnut::Timestep ts) override
 	{
 		if (Walnut::Input::IsKeyPressed(WN_KEY_LEFT))
-			m_CameraPosition.x += m_CameraMoveSpeed;
+			m_CameraPosition.x += m_CameraMoveSpeed * ts;
 		else if (Walnut::Input::IsKeyPressed(WN_KEY_RIGHT))
-			m_CameraPosition.x -= m_CameraMoveSpeed;
+			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
 		if (Walnut::Input::IsKeyPressed(WN_KEY_UP))
-			m_CameraPosition.y -= m_CameraMoveSpeed;
+			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
 		else if (Walnut::Input::IsKeyPressed(WN_KEY_DOWN))
-			m_CameraPosition.y += m_CameraMoveSpeed;
+			m_CameraPosition.y += m_CameraMoveSpeed * ts;
 
 		if (Walnut::Input::IsKeyPressed(WN_KEY_A))
-			m_CameraRotation -= m_CameraRotationSpeed;
+			m_CameraRotation -= m_CameraRotationSpeed * ts;
 		else if (Walnut::Input::IsKeyPressed(WN_KEY_D))
-			m_CameraRotation += m_CameraRotationSpeed;
+			m_CameraRotation += m_CameraRotationSpeed * ts;
 		Walnut::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Walnut::RenderCommand::Clear();
 
@@ -163,10 +163,10 @@ private:
 	Walnut::OrthographicCamera m_Camera;
 
 	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 0.1f;
+	float m_CameraMoveSpeed = 0.38f;
 
 	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 1.0f;
+	float m_CameraRotationSpeed = 68.0f;
 };
 
 class Sanbox : public Walnut::Application

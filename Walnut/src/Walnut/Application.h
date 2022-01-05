@@ -7,6 +7,8 @@
 #include "Walnut/Events/Event.h"
 #include "Walnut/Events/ApplicationEvent.h"
 
+#include "Walnut/Core/Timestep.h"
+
 #include "Walnut/ImGui/ImGuiLayer.h"
 
 
@@ -35,6 +37,7 @@ namespace Walnut {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};

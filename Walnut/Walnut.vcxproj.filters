@@ -1356,6 +1356,7 @@
     <ClInclude Include="src\Walnut\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Plateform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Walnut\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\Walnut\Core\Timestep.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Plateform\Windows\WindowsInput.cpp">

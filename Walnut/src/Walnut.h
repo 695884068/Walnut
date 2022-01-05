@@ -5,6 +5,7 @@
 #include "Walnut/Application.h"
 #include "Walnut/Layer.h"
 #include "Walnut/Log.h"
+#include "Walnut/Core/Timestep.h"
 
 #include "Walnut/Input.h"
 #include "Walnut/KeyCode.h"
