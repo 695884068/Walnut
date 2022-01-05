@@ -1,15 +1,18 @@
 #pragma once
 
 #include "Core.h"
+
 #include "Window.h"
 #include "Walnut/LayerStack.h"
 #include "Walnut/Events/Event.h"
 #include "Walnut/Events/ApplicationEvent.h"
+
 #include "Walnut/ImGui/ImGuiLayer.h"
+
 
 namespace Walnut {
 
-	class WALNUT_API Application
+	class Application
 	{
 	public:
 		Application();
