@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Walnut/Window.h"
+#include "Walnut/Core/Window.h"
 #include "Walnut/Renderer/GraphicsContext.h"
 
 #include "GLFW/glfw3.h"
@@ -24,12 +24,13 @@ namespace Walnut {
 		bool IsVSync() const override;
 
 		inline virtual void* GetNativeWindow() const { return m_Window; }
+		virtual Ref<GraphicsContext> GetGraphicsContext() const override { return m_Context; };
 	private:
 		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
-		GraphicsContext* m_Context;
+		Ref<GraphicsContext> m_Context;
 
 		struct WindowData
 		{

@@ -10,3 +10,15 @@
 [submodule "Walnut/vendor/glm"]
 	path = Walnut/vendor/glm
 	url = https://github.com/g-truc/glm
+[submodule "Walnut/vendor/SPIRV-Cross"]
+	path = Walnut/vendor/SPIRV-Cross
+	url = https://github.com/KhronosGroup/SPIRV-Cross.git
+[submodule "Walnut/vendor/shaderc"]
+	path = Walnut/vendor/shaderc
+	url = https://github.com/google/shaderc.git
+[submodule "Walnut/vendor/bullet3"]
+	path = Walnut/vendor/bullet3
+	url = https://github.com/netwarm007/bullet3.git
+[submodule "Walnut/vendor/yaml-cpp"]
+	path = Walnut/vendor/yaml-cpp
+	url = https://github.com/TheCherno/yaml-cpp.git

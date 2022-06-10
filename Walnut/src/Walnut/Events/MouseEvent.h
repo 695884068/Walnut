@@ -1,11 +1,12 @@
 #pragma once
 
 #include "Event.h"
+#include "Walnut/Core/MouseCodes.h"
 
 
 namespace Walnut {
 
-	class WALNUT_API MouseMovedEvent : public Event
+	class  MouseMovedEvent : public Event
 	{
 	public:
 		MouseMovedEvent(float x, float y)
@@ -27,7 +28,7 @@ namespace Walnut {
 		float m_MouseX, m_MouseY;
 	};
 
-	class WALNUT_API MouseScrolledEvent : public Event
+	class  MouseScrolledEvent : public Event
 	{
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)
@@ -49,7 +50,7 @@ namespace Walnut {
 		float m_XOffset, m_YOffset;
 	};
 
-	class WALNUT_API MouseButtonEvent : public Event
+	class  MouseButtonEvent : public Event
 	{
 	public:
 		inline int GetMouseButton() const { return m_Button; }
@@ -61,7 +62,7 @@ namespace Walnut {
 		int m_Button;
 	};
 
-	class WALNUT_API MouseButtonPressedEvent : public MouseButtonEvent
+	class  MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(int button)
@@ -76,7 +77,7 @@ namespace Walnut {
 
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
-	class WALNUT_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class  MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(int button)

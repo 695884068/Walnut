@@ -5,12 +5,15 @@
 
 namespace Walnut {
 
-	VertexArray* VertexArray::Create()
+	Ref<VertexArray> VertexArray::Create()
 	{
-		switch (Renderer::GetAPI())
+		switch (RendererAPI::Current())
 		{
-		case RendererAPI::API::None:    WN_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::API::OpenGL:  return new OpenGLVertexArray();
+		case RendererAPI::RendererAPIType::None:    WN_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::RendererAPIType::OpenGL:  return std::make_shared<OpenGLVertexArray>();
+		case RendererAPI::RendererAPIType::Vulkan:  return nullptr;
+		case RendererAPI::RendererAPIType::DX11:    return nullptr;
+		case RendererAPI::RendererAPIType::DX12:    return nullptr;
 		}
 
 		WN_CORE_ASSERT(false, "Unknown RendererAPI!");

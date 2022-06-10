@@ -9,6 +9,11 @@ workspace "Walnut"
 		"Dist"
 	}
 
+	flags
+	{
+		"MultiProcessorCompile"
+	}
+
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to toor folder (solution directory)
@@ -16,18 +21,28 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Walnut/vendor/GlFW/include"
 IncludeDir["Glad"] = "Walnut/vendor/Glad/include"
 IncludeDir["ImGui"] = "Walnut/vendor/imgui"
+IncludeDir["ImGuizmo"] = "Walnut/vendor/ImGuizmo"
 IncludeDir["glm"] = "Walnut/vendor/glm"
+IncludeDir["stb_image"] = "Walnut/vendor/stb_image"
+IncludeDir["assimp"] = "Walnut/vendor/assimp/include"
+IncludeDir["SPIRV-Cross"] = "Walnut/vendor/SPIRV-Cross"
+IncludeDir["shaderc"] = "Walnut/vendor/shaderc/libshaderc/include"
+IncludeDir["entt"] = "Walnut/vendor/entt/include"
+IncludeDir["yaml_cpp"] = "Walnut/vendor/yaml-cpp/include"
 
-include "Walnut/vendor/GLFW"
-include "Walnut/vendor/Glad"
-include "Walnut/vendor/imgui"
+group "Dependencies"
+	include "Walnut/vendor/GLFW"
+	include "Walnut/vendor/Glad"
+	include "Walnut/vendor/imgui"
+	include "Walnut/vendor/yaml-cpp"
+group ""
 
 project "Walnut"
 	location "Walnut"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
-	staticruntime "on"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -41,21 +56,35 @@ project "Walnut"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
+		"%{prj.name}/vendor/ImGuizmo/ImGuizmo.h",
+		"%{prj.name}/vendor/ImGuizmo/ImGuizmo.cpp"
 	}
 	
 	defines
 	{
-		"_CRT_SECURE_NO_WARNINGS"
+		"_CRT_SECURE_NO_WARNINGS",
+		"GLFW_INCLUDE_NONE"
 	}
 
 	includedirs
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include;",
+		"%{prj.name}/vendor/SPIRV-Cross;",
+		"%{prj.name}/vendor/shaderc/libshaderc/include;",
+		"%{prj.name}/vendor/bullet3/src;",
+		"%{prj.name}/vendor/FMOD;",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.ImGuizmo}",
+		"%{IncludeDir.assimp}",
+		"%{IncludeDir.yaml_cpp}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -63,8 +92,12 @@ project "Walnut"
 		"GLFW",
 		"Glad",
 		"ImGui",
-		"opengl32.lib"
+		"yaml-cpp",
+		"opengl32.lib",
+		"bullet3"
 	}
+	filter "files:vendor/ImGuizmo/**.cpp"
+	flags { "NoPCH" }
 
 	filter "system:windows"
 		systemversion "latest"
@@ -76,27 +109,27 @@ project "Walnut"
 			"GLFW_INCLUDE_NONE"
 		}
 
-		filter "configurations:Debug"
-			defines "WN_DEBUG"
-			runtime "Debug"
-			symbols "on"
+	filter "configurations:Debug"
+		defines "WN_DEBUG"
+		runtime "Debug"
+		symbols "on"
 
-		filter "configurations:Release"
-			defines "WN_RELEASE"
-			runtime "Release"
-			optimize "on"
+	filter "configurations:Release"
+		defines "WN_RELEASE"
+		runtime "Release"
+		optimize "on"
 
-		filter "configurations:Dist"
-			defines "WN_DIST"
-			runtime "Release"
-			optimize "on"
+	filter "configurations:Dist"
+		defines "WN_DIST"
+		runtime "Release"
+		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
-	staticruntime "on"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -112,7 +145,10 @@ project "Sandbox"
 		"Walnut/vendor/spdlog/include;",
 		"Walnut/src",
 		"Walnut/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.ImGuizmo}",
+		"src"
 	}
 
 	links
